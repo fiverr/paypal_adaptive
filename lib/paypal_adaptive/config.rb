@@ -88,6 +88,8 @@ module PaypalAdaptive
   private
 
   def self.default_env_for_config
+    puts "#{__method__} :: $env :: #{$env}"
+    return $env if defined?($env) && !$env.nil?
     defined?(Rails) ? Rails.env : nil
   end
 end
